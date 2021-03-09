@@ -1,0 +1,134 @@
+[
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "status": "New"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "status": "In Progress"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "status": "Done"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "tip": "Task"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "tip": "Bug"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "tip": "Enhancement"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 2,
+  "fields": {
+    "summary": "Google",
+    "description": "создать приложение для Google!",
+    "created_at": "2021-03-09T11:20:49.652Z",
+    "updated_at": "2021-03-09T11:20:49.652Z",
+    "status": 1,
+    "tip": 1
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 3,
+  "fields": {
+    "summary": "Facebook",
+    "description": "Исправить регистрацию в Вотсапе!",
+    "created_at": "2021-03-09T11:22:11.630Z",
+    "updated_at": "2021-03-09T11:22:11.630Z",
+    "status": 2,
+    "tip": 2
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 4,
+  "fields": {
+    "summary": "Facebook",
+    "description": "Добавить в вотсап плеер для прослушивания музыки!",
+    "created_at": "2021-03-09T11:23:36.857Z",
+    "updated_at": "2021-03-09T11:23:36.858Z",
+    "status": 1,
+    "tip": 3
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 5,
+  "fields": {
+    "summary": "Tik-tok",
+    "description": "Создать приложение для просмотров и загрузки разного рода видео!",
+    "created_at": "2021-03-09T11:24:31.550Z",
+    "updated_at": "2021-03-09T11:24:31.550Z",
+    "status": 3,
+    "tip": 1
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 6,
+  "fields": {
+    "summary": "Tik-tok",
+    "description": "Создать полатежную систему в зависимости от активности аккаунта и по просмотрам контента этого аккаунта!",
+    "created_at": "2021-03-09T11:27:08.139Z",
+    "updated_at": "2021-03-09T11:27:08.139Z",
+    "status": 3,
+    "tip": 3
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 7,
+  "fields": {
+    "summary": "VK",
+    "description": "Защита данных пользователей от мошенников!",
+    "created_at": "2021-03-09T11:28:57.579Z",
+    "updated_at": "2021-03-09T11:28:57.579Z",
+    "status": 2,
+    "tip": 3
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
+    "last_login": "2021-03-09T11:09:16.680Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-09T11:04:59.719Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
