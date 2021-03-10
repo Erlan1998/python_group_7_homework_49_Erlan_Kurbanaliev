@@ -1,0 +1,11 @@
+{% extends 'shablon.html' %}
+
+{% block page_header %}Добавить статью{% endblock page_header %}
+
+{% block content %}
+    <div class="d-flex justify-content-center" style="text-align: center">
+    <form action="{% url 'task_add' %}" method="post">
+        <div class="container">{% include "form.html" with button_text="Добавить товар" %}</div>
+    </form>
+    </div>
+{% endblock content %}
