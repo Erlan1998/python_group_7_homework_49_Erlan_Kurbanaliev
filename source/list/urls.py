@@ -21,6 +21,7 @@ from webapp.views import (
     TaskView,
     TaskAddView,
     TaskUpdateView,
+    TaskDeleteView,
 )
 
 urlpatterns = [
@@ -29,4 +30,5 @@ urlpatterns = [
     path('task/<int:id>/', TaskView.as_view(), name='task'),
     path('task/add/', TaskAddView.as_view(), name='task_add'),
     path('task/<int:id>/update/', TaskUpdateView.as_view(), name='task_update'),
+    path('task/<int:id>/delete/', TaskDeleteView.as_view(), name='task_delete'),
 ]

@@ -71,3 +71,15 @@ class TaskUpdateView(TemplateView):
             return redirect('task', id=list.id)
         return super().get_context_data(**kwargs)
 
+
+class TaskDeleteView(TemplateView):
+    template_name = 'delete.html'
+
+    def get_context_data(self, **kwargs):
+        kwargs['list'] = get_object_or_404(List, id=kwargs.get('id'))
+        return super().get_context_data(**kwargs)
+
+    def post(self, request, **kwargs):
+        list = get_object_or_404(List, id=kwargs.get('id'))
+        list.delete()
+        return redirect('index_tasks')
