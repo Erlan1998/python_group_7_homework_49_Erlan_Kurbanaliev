@@ -1,0 +1,18 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Info about tasks</h1>
+        <br>
+        <p>Name: {{ list.summary }}</p>
+        <p>Description: {{ list.description }}</p>
+        <p>Status: {{ list.status }}</p>
+        <p>Type: {{ list.tip }}</p>
+        <p>Date of creation: {{ list.created_at }}</p>
+        <p>Date of change: {{ list.updated_at }}</p>
+{#        <a href="{% url 'list_update' list.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>#}
+{#        <a href="{% url 'list_delete' list.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>#}
+    </div>
+
+
+{% endblock content %}

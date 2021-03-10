@@ -1,0 +1,14 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Task list</h2>
+        {% if not lists %}
+            <h2>NOT TASKS</h2>
+        {% endif  %}
+            {% for list in lists %}
+                <p><a href="{% url 'task' list.id%}">{{ list.summary }}</a></p>
+            {% endfor %}
+
+    </div>
+{% endblock content %}
