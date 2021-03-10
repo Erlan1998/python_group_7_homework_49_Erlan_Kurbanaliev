@@ -7,6 +7,7 @@ class Status(models.Model):
     def __str__(self):
         return f'{self.status}'
 
+
 class Type(models.Model):
     tip = models.CharField(max_length= 50, null=False, blank=False)
 

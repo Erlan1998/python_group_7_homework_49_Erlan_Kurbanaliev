@@ -10,7 +10,7 @@
         <p>Type: {{ list.tip }}</p>
         <p>Date of creation: {{ list.created_at }}</p>
         <p>Date of change: {{ list.updated_at }}</p>
-{#        <a href="{% url 'list_update' list.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>#}
+        <a href="{% url 'task_update' list.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
 {#        <a href="{% url 'list_delete' list.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>#}
     </div>
 

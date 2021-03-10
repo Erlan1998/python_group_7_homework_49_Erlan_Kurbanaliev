@@ -43,3 +43,31 @@ class TaskAddView(TemplateView):
             return redirect('task', id=list.id)
         return super().get_context_data(**kwargs)
 
+class TaskUpdateView(TemplateView):
+    template_name = 'update.html'
+
+    def get_context_data(self, **kwargs):
+        list = get_object_or_404(List, id=kwargs.get('id'))
+
+        form = ListForm(initial={
+            'summary': list.summary,
+            'description': list.description,
+            'status': list.status,
+            'tip': list.tip
+        })
+        kwargs['form'] = form
+        kwargs['list'] = list
+        return super().get_context_data(**kwargs)
+
+    def post(self, request, **kwargs):
+        list = get_object_or_404(List, id=kwargs.get('id'))
+        form = ListForm(data=request.POST)
+        if form.is_valid():
+            list.summary = request.POST.get('summary')
+            list.description = request.POST.get('description')
+            list.status_id = int(request.POST.get('status'))
+            list.tip_id = int(request.POST.get('tip'))
+            list.save()
+            return redirect('task', id=list.id)
+        return super().get_context_data(**kwargs)
+
