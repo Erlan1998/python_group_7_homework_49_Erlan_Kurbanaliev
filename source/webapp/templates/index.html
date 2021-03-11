@@ -1,14 +1,26 @@
 {% extends 'shablon.html' %}
 
 {% block content %}
-    <div class="container">
+<body style="background-size: 100%; background-image: url('https://image.freepik.com/free-vector/programming-code-background_46706-811.jpg') ">
+    <div class="container" style="max-width: 500px; color: aliceblue">
         <h2>Task list</h2>
         {% if not lists %}
             <h2>NOT TASKS</h2>
         {% endif  %}
             {% for list in lists %}
-                <p><a href="{% url 'task' list.id%}">{{ list.summary }}</a></p>
+                <div class="list-group">
+                  <a href="{% url 'task' list.id%}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{ list.summary }}</h5>
+                      <small class="text-muted">{{ list.created_at }}</small>
+                    </div>
+                    <p class="mb-1">Статус: {{ list.status }}</p>
+                    <p class="mb-1">Тип: {{ list.tip }}</p>
+                  </a>
+                </div>
+                </br>
             {% endfor %}
 
     </div>
+</body>
 {% endblock content %}

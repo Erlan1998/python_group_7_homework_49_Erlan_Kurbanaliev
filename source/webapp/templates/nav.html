@@ -1,19 +1,16 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin: 0 38%;">
+    <ul class="navbar-nav ">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'index_tasks' %}">Список Задач <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'task_add' %}">Добавление Задач</a>
       </li>
-{#      <li class="nav-item active">#}
-{#        <a class="nav-link" href="{% url 'some_delete' %}">Массовое удаление</a>#}
-{#      </li>#}
     </ul>
   </div>
 </nav>

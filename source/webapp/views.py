@@ -43,6 +43,7 @@ class TaskAddView(TemplateView):
             return redirect('task', id=list.id)
         return super().get_context_data(**kwargs)
 
+
 class TaskUpdateView(TemplateView):
     template_name = 'update.html'
 
