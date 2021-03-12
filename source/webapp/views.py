@@ -38,8 +38,8 @@ class TaskAddView(TemplateView):
                 created_at=form.cleaned_data.get('created_at'),
                 updated_at=form.cleaned_data.get('updated_at'),
                 status=form.cleaned_data.get('status'),
-                tip=form.cleaned_data.get('tip')
             )
+            list.tip.set(form.cleaned_data.get('tip'))
             return redirect('task', id=list.id)
         return super().get_context_data(**kwargs)
 
@@ -54,7 +54,7 @@ class TaskUpdateView(TemplateView):
             'summary': list.summary,
             'description': list.description,
             'status': list.status,
-            'tip': list.tip
+            'tip': list.tip.all()
         })
         kwargs['form'] = form
         kwargs['list'] = list
@@ -68,6 +68,7 @@ class TaskUpdateView(TemplateView):
             list.description = form.cleaned_data.get('description')
             list.status_id = form.cleaned_data.get('status')
             list.tip_id = form.cleaned_data.get('tip')
+            list.tip.set(form.cleaned_data.get('tip'))
             list.save()
             return redirect('task', id=list.id)
         return super().get_context_data(**kwargs)

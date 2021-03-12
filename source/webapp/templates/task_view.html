@@ -8,7 +8,7 @@
         <p>Name: {{ list.summary }}</p>
         <p>Description: {{ list.description }}</p>
         <p>Status: {{ list.status }}</p>
-        <p>Type: {% for i in list.tip.all %}{{ i }}{% endfor %}</p>
+        <p>Type: {% for i in list.tip.all %}{{ i }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
         <p>Date of creation: {{ list.created_at }}</p>
         <p>Date of change: {{ list.updated_at }}</p>
         <a href="{% url 'task_update' list.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
