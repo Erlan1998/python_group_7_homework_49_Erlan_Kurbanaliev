@@ -4,7 +4,7 @@ from webapp.models import List, Status, Type
 
 
 class ListAdmin(admin.ModelAdmin):
-    list_display = ['id', 'summary', 'status', 'tip', 'updated_at']
+    list_display = ['id', 'summary', 'status', 'updated_at']
     list_filter = ['status', 'tip']
     search_fields = ['summary']
     fields = ['id', 'summary', 'description', 'status', 'tip', 'updated_at']
