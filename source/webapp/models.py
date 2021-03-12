@@ -9,7 +9,12 @@ class Status(models.Model):
 
 
 class Type(models.Model):
-    tip = models.CharField(max_length=50, null=False, blank=False)
+    tip = models.CharField(max_length=50, null=False, blank=False, verbose_name='Тип')
+
+    class Meta:
+        db_table = 'types'
+        verbose_name = 'Тип'
+        verbose_name_plural = 'Типы'
 
     def __str__(self):
         return f'{self.tip}'
@@ -21,7 +26,7 @@ class List(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.ForeignKey('webapp.Status', related_name='Lists', on_delete=models.PROTECT)
-    tip = models.ForeignKey('webapp.Type', related_name='List', on_delete=models.PROTECT)
+    tip = models.ManyToManyField('webapp.Type', related_name='Lists',  blank=True)
 
     class Meta:
         db_table = 'Lists'
