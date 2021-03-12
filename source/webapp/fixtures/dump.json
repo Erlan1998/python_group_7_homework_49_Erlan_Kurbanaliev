@@ -46,11 +46,13 @@
   "pk": 2,
   "fields": {
     "summary": "Google",
-    "description": "создать приложение для Google!",
+    "description": "создать приложение для Google!!",
     "created_at": "2021-03-09T11:20:49.652Z",
-    "updated_at": "2021-03-09T11:20:49.652Z",
+    "updated_at": "2021-03-12T09:39:46.912Z",
     "status": 1,
-    "tip": 1
+    "tip": [
+      1
+    ]
   }
 },
 {
@@ -60,9 +62,12 @@
     "summary": "Facebook",
     "description": "Исправить регистрацию в Вотсапе!",
     "created_at": "2021-03-09T11:22:11.630Z",
-    "updated_at": "2021-03-09T11:22:11.630Z",
+    "updated_at": "2021-03-12T09:39:41.450Z",
     "status": 2,
-    "tip": 2
+    "tip": [
+      1,
+      2
+    ]
   }
 },
 {
@@ -72,9 +77,11 @@
     "summary": "Facebook",
     "description": "Добавить в вотсап плеер для прослушивания музыки!",
     "created_at": "2021-03-09T11:23:36.857Z",
-    "updated_at": "2021-03-09T11:23:36.858Z",
+    "updated_at": "2021-03-12T09:39:37.597Z",
     "status": 1,
-    "tip": 3
+    "tip": [
+      3
+    ]
   }
 },
 {
@@ -84,9 +91,12 @@
     "summary": "Tik-tok",
     "description": "Создать приложение для просмотров и загрузки разного рода видео!",
     "created_at": "2021-03-09T11:24:31.550Z",
-    "updated_at": "2021-03-09T11:24:31.550Z",
+    "updated_at": "2021-03-12T09:37:59.017Z",
     "status": 3,
-    "tip": 1
+    "tip": [
+      1,
+      3
+    ]
   }
 },
 {
@@ -96,9 +106,11 @@
     "summary": "Tik-tok",
     "description": "Создать полатежную систему в зависимости от активности аккаунта и по просмотрам контента этого аккаунта!",
     "created_at": "2021-03-09T11:27:08.139Z",
-    "updated_at": "2021-03-09T11:27:08.139Z",
+    "updated_at": "2021-03-12T09:39:25.892Z",
     "status": 3,
-    "tip": 3
+    "tip": [
+      3
+    ]
   }
 },
 {
@@ -108,21 +120,27 @@
     "summary": "VK",
     "description": "Защита данных пользователей от мошенников!",
     "created_at": "2021-03-09T11:28:57.579Z",
-    "updated_at": "2021-03-09T11:28:57.579Z",
+    "updated_at": "2021-03-12T09:38:13.713Z",
     "status": 2,
-    "tip": 3
+    "tip": [
+      1,
+      3
+    ]
   }
 },
 {
   "model": "webapp.list",
   "pk": 8,
   "fields": {
-    "summary": " YouTube",
+    "summary": "YouTube",
     "description": "vnnvnjh,j,hmh",
     "created_at": "2021-03-10T10:48:32.514Z",
-    "updated_at": "2021-03-10T12:29:42.900Z",
+    "updated_at": "2021-03-12T09:36:01.007Z",
     "status": 2,
-    "tip": 2
+    "tip": [
+      2,
+      3
+    ]
   }
 },
 {
@@ -130,7 +148,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
-    "last_login": "2021-03-09T11:09:16.680Z",
+    "last_login": "2021-03-12T09:34:21.144Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
