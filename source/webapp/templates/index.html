@@ -15,7 +15,7 @@
                       <small class="text-muted">{{ list.created_at }}</small>
                     </div>
                     <p class="mb-1">Статус: {{ list.status }}</p>
-                    <p class="mb-1">Тип: {{ list.tip }}</p>
+                    <p class="mb-1">Тип: {% for i in list.tip.all %}{{ i }}{% endfor %}</p>
                   </a>
                 </div>
                 </br>
