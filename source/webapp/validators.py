@@ -19,4 +19,12 @@ def CapitalLetter(a):
         raise ValidationError('Введите название задачи с заглавной буквы!')
 
 
-
+def OnlyLetters(a):
+    for i in a:
+        try:
+            int(i)
+            raise ValidationError('Не вводите цифры!')
+        except ValidationError as e:
+            raise e
+        except ValueError:
+            pass
