@@ -41,7 +41,7 @@ class TaskAddView(TemplateView):
             )
             list.tip.set(form.cleaned_data.get('tip'))
             return redirect('task', id=list.id)
-        return super().get_context_data(**kwargs)
+        return render(request, 'add_view.html', context={'form': form})
 
 
 class TaskUpdateView(TemplateView):
@@ -71,7 +71,7 @@ class TaskUpdateView(TemplateView):
             list.tip.set(form.cleaned_data.get('tip'))
             list.save()
             return redirect('task', id=list.id)
-        return super().get_context_data(**kwargs)
+        return render(request, 'add_view.html', context={'form': form})
 
 
 class TaskDeleteView(TemplateView):
