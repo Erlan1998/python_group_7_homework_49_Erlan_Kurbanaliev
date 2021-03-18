@@ -1,4 +1,4 @@
-from django.core.validators import BaseValidator
+from django.core.validators import BaseValidator, ValidationError
 from django.utils.deconstruct import deconstructible
 
 
@@ -12,3 +12,11 @@ class MinLengthValidator(BaseValidator):
 
     def clean(self, x):
         return len(x)
+
+
+def CapitalLetter(a):
+    if not a[0].isupper():
+        raise ValidationError('Введите название задачи с заглавной буквы!')
+
+
+

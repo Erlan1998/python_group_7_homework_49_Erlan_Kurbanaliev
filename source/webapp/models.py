@@ -1,5 +1,5 @@
 from django.db import models
-from webapp.validators import MinLengthValidator
+from webapp.validators import MinLengthValidator, CapitalLetter
 
 
 class Status(models.Model):
@@ -22,8 +22,8 @@ class Type(models.Model):
 
 
 class List(models.Model):
-    summary = models.CharField(max_length=100, null=False, blank=False, validators=(MinLengthValidator(10),))
-    description = models.TextField(max_length=3000, null=True, blank=True, validators=(MinLengthValidator(20),))
+    summary = models.CharField(max_length=100, null=False, blank=False, validators=(MinLengthValidator(10), CapitalLetter))
+    description = models.TextField(max_length=3000, null=False, blank=False, validators=(MinLengthValidator(20),))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     status = models.ForeignKey('webapp.Status', related_name='Lists', on_delete=models.PROTECT)
