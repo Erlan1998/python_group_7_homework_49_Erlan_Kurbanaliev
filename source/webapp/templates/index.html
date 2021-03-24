@@ -22,7 +22,9 @@
                 </div>
                 </br>
             {% endfor %}
-
+        {% if is_paginated %}
+            {% include 'partial/paginate.html' %}
+        {% endif %}
     </div>
 </body>
 {% endblock content %}
