@@ -176,6 +176,64 @@
   }
 },
 {
+  "model": "webapp.list",
+  "pk": 24,
+  "fields": {
+    "summary": "YouTube",
+    "description": "Started by Jawed Karim, Steve Chen, and Chad Hurley, YouTube first launched in 2005 and has now become one of the most visited websites in the history of the internet.",
+    "created_at": "2021-03-24T10:22:42.269Z",
+    "updated_at": "2021-03-24T12:24:36.158Z",
+    "status": 1,
+    "tip": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 25,
+  "fields": {
+    "summary": "Facebook",
+    "description": "Telegram is a freeware, cross-platform, cloud-based instant messaging (IM) software and application service. The service also provides end-to-end encrypted video calling,[14] VoIP, file sharing and several other features. It was initially launched for iOS on 14 August 2013 and Android in October 2013",
+    "created_at": "2021-03-24T10:40:36.606Z",
+    "updated_at": "2021-03-24T12:23:58.488Z",
+    "status": 2,
+    "tip": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 26,
+  "fields": {
+    "summary": "Telegramm",
+    "description": "Telegram is a messaging app with a focus on speed and security, it's super-fast, simple and free. You can use Telegram on all your devices at the same time — your messages sync seamlessly across any number of your phones, tablets or computers.",
+    "created_at": "2021-03-24T10:41:16.103Z",
+    "updated_at": "2021-03-24T12:23:21.600Z",
+    "status": 1,
+    "tip": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 27,
+  "fields": {
+    "summary": "Facebook",
+    "description": "We build technologies that help people connect with friends and family, find communities, and grow businesses.",
+    "created_at": "2021-03-24T11:41:18.296Z",
+    "updated_at": "2021-03-24T12:22:48.751Z",
+    "status": 2,
+    "tip": [
+      2
+    ]
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
