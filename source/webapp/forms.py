@@ -9,3 +9,6 @@ class ListForm(forms.ModelForm):
         model = List
         fields = ['summary', 'description', 'status', 'tip']
 
+
+class SearchForm(forms.Form):
+    search_value = forms.CharField(max_length=100, required=False, label='Найти')
