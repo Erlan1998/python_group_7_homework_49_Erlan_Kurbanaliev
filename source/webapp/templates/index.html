@@ -6,7 +6,9 @@
         <h2>Tasks list</h2>
         {% if not lists %}
             <h2>NOT TASKS</h2>
-        {% endif  %}
+        {% else %}
+        {% include "partial/search_form.html" %}
+         {% endif %}
             {% for list in lists %}
                 <div class="list-group">
                   <a href="{% url 'task' list.id%}" class="list-group-item list-group-item-action">
