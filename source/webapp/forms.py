@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from webapp.models import Status, Type, List
+from webapp.models import Porjects, List
 
 
 class ListForm(forms.ModelForm):
@@ -12,3 +12,9 @@ class ListForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     search_value = forms.CharField(max_length=100, required=False, label='Найти')
+
+
+class ProjectsForm(forms.ModelForm):
+    class Meta:
+        model = Porjects
+        fields = ['name']
