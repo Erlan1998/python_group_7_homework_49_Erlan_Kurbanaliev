@@ -1,15 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView, FormView, ListView
+from django.views.generic import TemplateView,  ListView
 from webapp.models import List
 from webapp.forms import ListForm, SearchForm
 from django.urls import reverse
 from django.db.models import Q
 from django.utils.http import urlencode
-# Create your views here.
 
 
 class IndexView(ListView):
-    template_name = 'index.html'
+    template_name = 'tasks/index.html'
     model = List
     context_object_name = 'lists'
     ordering = ('-created_at', 'summary')
@@ -48,7 +47,7 @@ class IndexView(ListView):
 
 
 class TaskView(TemplateView):
-    template_name = 'task_view.html'
+    template_name = 'tasks/view.html'
 
     def get_context_data(self, **kwargs):
         kwargs['list'] = get_object_or_404(List, id=kwargs.get('id'))
@@ -56,7 +55,7 @@ class TaskView(TemplateView):
 
 
 class TaskAddView(TemplateView):
-    template_name = 'add_view.html'
+    template_name = 'tasks/add.html'
 
     def get_context_data(self, **kwargs):
         form = ListForm()
@@ -75,11 +74,11 @@ class TaskAddView(TemplateView):
             )
             list.tip.set(form.cleaned_data.get('tip'))
             return redirect('task', id=list.id)
-        return render(request, 'add_view.html', context={'form': form})
+        return render(request, 'tasks/add.html', context={'form': form})
 
 
 class TaskUpdateView(TemplateView):
-    template_name = 'update.html'
+    template_name = 'tasks/update.html'
 
     def get_context_data(self, **kwargs):
         list = get_object_or_404(List, id=kwargs.get('id'))
@@ -105,11 +104,11 @@ class TaskUpdateView(TemplateView):
             list.tip.set(form.cleaned_data.get('tip'))
             list.save()
             return redirect('task', id=list.id)
-        return render(request, 'add_view.html', context={'form': form})
+        return render(request, 'tasks/add.html', context={'form': form})
 
 
 class TaskDeleteView(TemplateView):
-    template_name = 'delete.html'
+    template_name = 'tasks/delete.html'
 
     def get_context_data(self, **kwargs):
         kwargs['list'] = get_object_or_404(List, id=kwargs.get('id'))
