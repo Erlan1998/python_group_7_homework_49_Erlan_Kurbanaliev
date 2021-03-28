@@ -7,7 +7,7 @@
     <form action="{% url 'task_delete' list.id %}" method="POST">
         {% csrf_token %}
         <input class="btn btn-primary btn-lg active" role="button" style="padding: 10px 42px" aria-pressed="true" type="submit" value="Да"/>
-         <a href="{% url "task" list.id %}" class="btn btn-secondary btn-lg active"  role="button" aria-pressed="true">Отмена!</a>
+         <a href="{% url "project" list.id %}" class="btn btn-secondary btn-lg active"  role="button" aria-pressed="true">Отмена!</a>
     </form>
     </div>
 </body>

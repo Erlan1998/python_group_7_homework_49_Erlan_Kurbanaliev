@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView,  ListView
-from webapp.models import List
-from webapp.forms import ListForm, SearchForm
+from django.views.generic import TemplateView,  ListView, CreateView
+from webapp.models import List, Projects
+from webapp.forms import ListForm, SearchForm, ProjectsForm
 from django.urls import reverse
 from django.db.models import Q
 from django.utils.http import urlencode
@@ -54,27 +54,17 @@ class TaskView(TemplateView):
         return super().get_context_data(**kwargs)
 
 
-class TaskAddView(TemplateView):
+class TaskAddView(CreateView):
+    model = Projects
     template_name = 'tasks/add.html'
+    form_class = ListForm
 
-    def get_context_data(self, **kwargs):
-        form = ListForm()
-        kwargs['form'] = form
-        return super().get_context_data(**kwargs)
-
-    def post(self, request,  **kwargs):
-        form = ListForm(data=request.POST)
-        if form.is_valid():
-            list = List.objects.create(
-                summary=form.cleaned_data.get('summary'),
-                description=form.cleaned_data.get('description'),
-                created_at=form.cleaned_data.get('created_at'),
-                updated_at=form.cleaned_data.get('updated_at'),
-                status=form.cleaned_data.get('status'),
-            )
-            list.tip.set(form.cleaned_data.get('tip'))
-            return redirect('task', id=list.id)
-        return render(request, 'tasks/add.html', context={'form': form})
+    def form_valid(self, form):
+        project = get_object_or_404(Projects, id=self.kwargs.get('id'))
+        list = form.save(commit=False)
+        list.project = project
+        list.save()
+        return redirect('project', id=project.id)
 
 
 class TaskUpdateView(TemplateView):
@@ -117,4 +107,4 @@ class TaskDeleteView(TemplateView):
     def post(self, request, **kwargs):
         list = get_object_or_404(List, id=kwargs.get('id'))
         list.delete()
-        return redirect('index_tasks')
+        return redirect('project', id=list.project.id)
