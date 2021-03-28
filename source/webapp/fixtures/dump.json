@@ -42,49 +42,43 @@
   }
 },
 {
-  "model": "webapp.list",
+  "model": "webapp.projects",
+  "pk": 1,
+  "fields": {
+    "name": "Putin",
+    "description": "vvvvvvvv",
+    "created_date": "2021-03-27",
+    "update_date": null
+  }
+},
+{
+  "model": "webapp.projects",
   "pk": 2,
   "fields": {
-    "summary": "Google",
-    "description": "создать приложение для Google!!",
-    "created_at": "2021-03-09T11:20:49.652Z",
-    "updated_at": "2021-03-12T10:54:57.102Z",
-    "status": 1,
-    "tip": [
-      1,
-      3
-    ]
+    "name": "Nike",
+    "description": "Fmfvhufyudhvfjdhvudhfvufjv",
+    "created_date": "2021-03-27",
+    "update_date": null
   }
 },
 {
-  "model": "webapp.list",
+  "model": "webapp.projects",
   "pk": 3,
   "fields": {
-    "summary": "Facebook",
-    "description": "Исправить регистрацию в Вотсапе!",
-    "created_at": "2021-03-09T11:22:11.630Z",
-    "updated_at": "2021-03-15T13:08:22.580Z",
-    "status": 2,
-    "tip": [
-      1,
-      2,
-      3
-    ]
+    "name": "Курбаналиева Айзирек",
+    "description": "bfcfc",
+    "created_date": "2021-03-27",
+    "update_date": null
   }
 },
 {
-  "model": "webapp.list",
+  "model": "webapp.projects",
   "pk": 4,
   "fields": {
-    "summary": "Facebook",
-    "description": "Добавить в вотсап плеер для прослушивания музыки!",
-    "created_at": "2021-03-09T11:23:36.857Z",
-    "updated_at": "2021-03-19T13:53:52.164Z",
-    "status": 3,
-    "tip": [
-      2,
-      3
-    ]
+    "name": "Sony",
+    "description": "Fndkjvjdsvnjsknc jka dkcnkjdsnvcjkdsnvjk ndsnjkdsncksdj",
+    "created_date": "2021-03-27",
+    "update_date": "2021-03-28"
   }
 },
 {
@@ -96,6 +90,7 @@
     "created_at": "2021-03-09T11:24:31.550Z",
     "updated_at": "2021-03-12T09:37:59.017Z",
     "status": 3,
+    "project": 1,
     "tip": [
       1,
       3
@@ -111,6 +106,7 @@
     "created_at": "2021-03-09T11:27:08.139Z",
     "updated_at": "2021-03-12T09:39:25.892Z",
     "status": 3,
+    "project": 1,
     "tip": [
       3
     ]
@@ -125,6 +121,7 @@
     "created_at": "2021-03-09T11:28:57.579Z",
     "updated_at": "2021-03-18T12:33:03.004Z",
     "status": 2,
+    "project": 1,
     "tip": [
       1,
       3
@@ -140,6 +137,7 @@
     "created_at": "2021-03-10T10:48:32.514Z",
     "updated_at": "2021-03-12T10:57:20.811Z",
     "status": 1,
+    "project": 1,
     "tip": [
       1,
       3
@@ -155,23 +153,10 @@
     "created_at": "2021-03-18T12:32:02.414Z",
     "updated_at": "2021-03-18T12:32:02.414Z",
     "status": 2,
+    "project": 1,
     "tip": [
       1,
       3
-    ]
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 22,
-  "fields": {
-    "summary": "Buging",
-    "description": "Программная ошибка (жарг. баг) — означает ошибку в программе или в системе, из-за которой программа выдает неожиданное поведение и, как следствие, результат.",
-    "created_at": "2021-03-19T13:38:36.074Z",
-    "updated_at": "2021-03-19T13:41:53.621Z",
-    "status": 1,
-    "tip": [
-      1
     ]
   }
 },
@@ -184,23 +169,9 @@
     "created_at": "2021-03-24T10:22:42.269Z",
     "updated_at": "2021-03-24T12:24:36.158Z",
     "status": 1,
+    "project": 1,
     "tip": [
       2
-    ]
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 25,
-  "fields": {
-    "summary": "Facebook",
-    "description": "Telegram is a freeware, cross-platform, cloud-based instant messaging (IM) software and application service. The service also provides end-to-end encrypted video calling,[14] VoIP, file sharing and several other features. It was initially launched for iOS on 14 August 2013 and Android in October 2013",
-    "created_at": "2021-03-24T10:40:36.606Z",
-    "updated_at": "2021-03-24T12:23:58.488Z",
-    "status": 2,
-    "tip": [
-      2,
-      3
     ]
   }
 },
@@ -213,6 +184,7 @@
     "created_at": "2021-03-24T10:41:16.103Z",
     "updated_at": "2021-03-24T12:23:21.600Z",
     "status": 1,
+    "project": 1,
     "tip": [
       1,
       3
@@ -221,15 +193,16 @@
 },
 {
   "model": "webapp.list",
-  "pk": 27,
+  "pk": 31,
   "fields": {
     "summary": "Facebook",
-    "description": "We build technologies that help people connect with friends and family, find communities, and grow businesses.",
-    "created_at": "2021-03-24T11:41:18.296Z",
-    "updated_at": "2021-03-24T12:22:48.751Z",
-    "status": 2,
+    "description": "Gfgbgfbfggbgfbgfbgfgb  gfbgfbgfbgfbgfbgfbgfbgb f gbfgbgfbfgbfgg",
+    "created_at": "2021-03-27T12:17:31.595Z",
+    "updated_at": "2021-03-27T12:25:23.187Z",
+    "status": 1,
+    "project": 4,
     "tip": [
-      2
+      1
     ]
   }
 },
@@ -238,7 +211,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
-    "last_login": "2021-03-12T09:34:21.144Z",
+    "last_login": "2021-03-26T11:22:05.936Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
