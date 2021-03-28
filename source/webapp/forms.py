@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import widgets
-from webapp.models import Porjects, List
+from webapp.models import Projects, List
 
 
 class ListForm(forms.ModelForm):
@@ -16,5 +16,11 @@ class SearchForm(forms.Form):
 
 class ProjectsForm(forms.ModelForm):
     class Meta:
-        model = Porjects
-        fields = ['name']
+        model = Projects
+        fields = ['name', 'description', 'created_date', 'update_date']
+
+
+class ProjectsUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Projects
+        fields = ['name', 'description',  'update_date']
