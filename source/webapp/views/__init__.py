@@ -5,3 +5,10 @@ from webapp.views.tasks import (
     TaskUpdateView,
     TaskDeleteView,
 )
+from webapp.views.projects import (
+    IndexViewProject,
+    ProjectView,
+    ProjectCreate,
+    ProjectDeleteView,
+    ProjectUpdateView
+)
