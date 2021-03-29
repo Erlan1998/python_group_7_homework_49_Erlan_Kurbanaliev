@@ -45,10 +45,10 @@
   "model": "webapp.projects",
   "pk": 1,
   "fields": {
-    "name": "Putin",
-    "description": "vvvvvvvv",
+    "name": "Соц.сети",
+    "description": "Соц сети являются важным аспектом  в жизни человека!",
     "created_date": "2021-03-27",
-    "update_date": null
+    "update_date": "2022-01-01"
   }
 },
 {
@@ -56,29 +56,59 @@
   "pk": 2,
   "fields": {
     "name": "Nike",
-    "description": "Fmfvhufyudhvfjdhvudhfvufjv",
+    "description": "Создать сайт для компании NIKE!",
     "created_date": "2021-03-27",
-    "update_date": null
+    "update_date": "2021-05-30"
   }
 },
 {
   "model": "webapp.projects",
   "pk": 3,
   "fields": {
-    "name": "Курбаналиева Айзирек",
-    "description": "bfcfc",
+    "name": "IT Атрактор",
+    "description": "Запись на курсы в группу Python-7! Закончить с отличием!",
     "created_date": "2021-03-27",
-    "update_date": null
+    "update_date": "2021-07-09"
   }
 },
 {
   "model": "webapp.projects",
   "pk": 4,
   "fields": {
-    "name": "Sony",
-    "description": "Fndkjvjdsvnjsknc jka dkcnkjdsnvcjkdsnvjk ndsnjkdsncksdj",
+    "name": "SONY",
+    "description": "Платформа для распознования устройств SONY",
     "created_date": "2021-03-27",
-    "update_date": "2021-03-28"
+    "update_date": "2021-06-28"
+  }
+},
+{
+  "model": "webapp.projects",
+  "pk": 5,
+  "fields": {
+    "name": "Интернет Магазин",
+    "description": "Интернет магазин на подобии Амазон!",
+    "created_date": "2021-03-26",
+    "update_date": "2021-03-27"
+  }
+},
+{
+  "model": "webapp.projects",
+  "pk": 7,
+  "fields": {
+    "name": "Smart-sity",
+    "description": "Система Умный город для безопастности граждан!",
+    "created_date": "2021-03-27",
+    "update_date": "2021-06-28"
+  }
+},
+{
+  "model": "webapp.projects",
+  "pk": 8,
+  "fields": {
+    "name": "Чистый город",
+    "description": "Система для чистого города!",
+    "created_date": "2021-03-26",
+    "update_date": "2021-05-30"
   }
 },
 {
@@ -195,14 +225,60 @@
   "model": "webapp.list",
   "pk": 31,
   "fields": {
-    "summary": "Facebook",
-    "description": "Gfgbgfbfggbgfbgfbgfgb  gfbgfbgfbgfbgfbgfbgfbgb f gbfgbgfbfgbfgg",
+    "summary": "Аналитика",
+    "description": "Анализ количества задач! и подсчет суммы!",
     "created_at": "2021-03-27T12:17:31.595Z",
-    "updated_at": "2021-03-27T12:25:23.187Z",
+    "updated_at": "2021-03-29T12:01:46.427Z",
     "status": 1,
     "project": 4,
     "tip": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 32,
+  "fields": {
+    "summary": "Аналитика",
+    "description": "Анализ всех данных! Обьем и вид сайта!",
+    "created_at": "2021-03-28T13:36:43.167Z",
+    "updated_at": "2021-03-29T11:58:46.165Z",
+    "status": 2,
+    "project": 2,
+    "tip": [
       1
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 33,
+  "fields": {
+    "summary": "Планировка",
+    "description": "Распределение ролей! И планировка!",
+    "created_at": "2021-03-28T13:37:03.228Z",
+    "updated_at": "2021-03-29T11:59:53.780Z",
+    "status": 1,
+    "project": 2,
+    "tip": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 35,
+  "fields": {
+    "summary": "Стоимость!",
+    "description": "Подсчет всей стоимости обучения!",
+    "created_at": "2021-03-29T12:04:02.082Z",
+    "updated_at": "2021-03-29T12:04:19.235Z",
+    "status": 3,
+    "project": 3,
+    "tip": [
+      1,
+      3
     ]
   }
 },
