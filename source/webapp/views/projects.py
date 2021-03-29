@@ -1,5 +1,5 @@
 from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm
-from django.views.generic import CreateView, ListView, TemplateView, UpdateView
+from django.views.generic import CreateView, ListView, TemplateView, UpdateView, DetailView
 from django.shortcuts import reverse, get_object_or_404, redirect, render
 from webapp.models import Projects, List
 from django.db.models import Q
@@ -12,7 +12,7 @@ class IndexViewProject(ListView):
     context_object_name = 'projects'
     ordering = ('-created_date', 'name')
     paginate_by = 5
-    paginate_orphans = 2
+    paginate_orphans = 1
 
     def get(self, request, **kwargs):
         self.form = SearchForm(request.GET)
@@ -45,12 +45,11 @@ class IndexViewProject(ListView):
         return kwargs
 
 
-class ProjectView(TemplateView):
+class ProjectView(DetailView):
     template_name = 'projects/view_project.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['project'] = get_object_or_404(Projects, id=kwargs.get('id'))
-        return super().get_context_data(**kwargs)
+    model = Projects
+    pk_url_kwarg = 'id'
+    context_object_name = 'project'
 
 
 class ProjectCreate(CreateView):

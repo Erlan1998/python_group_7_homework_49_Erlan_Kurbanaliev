@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView,  ListView, CreateView
+from django.views.generic import TemplateView,  ListView, CreateView, DetailView
 from webapp.models import List, Projects
 from webapp.forms import ListForm, SearchForm, ProjectsForm
 from django.urls import reverse
@@ -46,12 +46,10 @@ class IndexView(ListView):
         return kwargs
 
 
-class TaskView(TemplateView):
+class TaskView(DetailView):
     template_name = 'tasks/view.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['list'] = get_object_or_404(List, id=kwargs.get('id'))
-        return super().get_context_data(**kwargs)
+    model = List
+    pk_url_kwarg = "id"
 
 
 class TaskAddView(CreateView):

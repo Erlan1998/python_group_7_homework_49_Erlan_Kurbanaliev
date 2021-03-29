@@ -12,10 +12,11 @@
         <a href="{% url 'project_delete' project.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
         <a href="{% url 'project_update' project.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
         <a href="{% url 'task_add' project.id %}"><button type="button" class="btn btn-warning">Создать задачу!</button></a>
+
         {% if not project.Lists.all %}
             <h2>NOT TASKS</h2>
         {% else %}
-         {% endif %}
+         {% endif %}<br>
             {% for list in project.Lists.all %}
                 <div class="list-group">
                   <a href="{% url 'task' list.id%}" class="list-group-item list-group-item-action">
