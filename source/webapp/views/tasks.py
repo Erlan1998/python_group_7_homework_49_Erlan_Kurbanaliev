@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import TemplateView,  ListView, CreateView, DetailView
+from django.views.generic import TemplateView,  ListView, CreateView, DetailView, UpdateView
 from webapp.models import List, Projects
 from webapp.forms import ListForm, SearchForm, ProjectsForm
 from django.urls import reverse
@@ -65,34 +65,45 @@ class TaskAddView(CreateView):
         return redirect('project', id=project.id)
 
 
-class TaskUpdateView(TemplateView):
+class TaskUpdateView(UpdateView):
     template_name = 'tasks/update.html'
+    model = List
+    form_class = ListForm
+    context_object_name = 'list'
+    pk_url_kwarg = 'id'
 
-    def get_context_data(self, **kwargs):
-        list = get_object_or_404(List, id=kwargs.get('id'))
+    def get_success_url(self):
+        return reverse('task', kwargs={'id': self.object.id})
 
-        form = ListForm(initial={
-            'summary': list.summary,
-            'description': list.description,
-            'status': list.status,
-            'tip': list.tip.all()
-        })
-        kwargs['form'] = form
-        kwargs['list'] = list
-        return super().get_context_data(**kwargs)
 
-    def post(self, request, **kwargs):
-        list = get_object_or_404(List, id=kwargs.get('id'))
-        form = ListForm(data=request.POST)
-        if form.is_valid():
-            list.summary = form.cleaned_data.get('summary')
-            list.description = form.cleaned_data.get('description')
-            list.status_id = form.cleaned_data.get('status')
-            list.tip_id = form.cleaned_data.get('tip')
-            list.tip.set(form.cleaned_data.get('tip'))
-            list.save()
-            return redirect('task', id=list.id)
-        return render(request, 'tasks/add.html', context={'form': form})
+# class TaskUpdateView(UpdateView):
+#     template_name = 'tasks/update.html'
+#
+#     def get_context_data(self, **kwargs):
+#         list = get_object_or_404(List, id=kwargs.get('id'))
+#
+#         form = ListForm(initial={
+#             'summary': list.summary,
+#             'description': list.description,
+#             'status': list.status,
+#             'tip': list.tip.all()
+#         })
+#         kwargs['form'] = form
+#         kwargs['list'] = list
+#         return super().get_context_data(**kwargs)
+#
+#     def post(self, request, **kwargs):
+#         list = get_object_or_404(List, id=kwargs.get('id'))
+#         form = ListForm(data=request.POST)
+#         if form.is_valid():
+#             list.summary = form.cleaned_data.get('summary')
+#             list.description = form.cleaned_data.get('description')
+#             list.status_id = form.cleaned_data.get('status')
+#             list.tip_id = form.cleaned_data.get('tip')
+#             list.tip.set(form.cleaned_data.get('tip'))
+#             list.save()
+#             return redirect('task', id=list.id)
+#         return render(request, 'tasks/add.html', context={'form': form})
 
 
 class TaskDeleteView(TemplateView):

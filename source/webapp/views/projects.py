@@ -61,32 +61,15 @@ class ProjectCreate(CreateView):
         return reverse('project', kwargs={'id': self.object.id})
 
 
-class ProjectUpdateView(TemplateView):
+class ProjectUpdateView(UpdateView):
     template_name = 'projects/update_project.html'
+    model = Projects
+    form_class = ProjectsUpdateForm
+    context_object_name = 'project'
+    pk_url_kwarg = 'id'
 
-    def get_context_data(self, **kwargs):
-        project = get_object_or_404(Projects, id=kwargs.get('id'))
-
-        form = ProjectsUpdateForm(initial={
-            'name': project.name,
-            'description': project.description,
-            'update_date': project.update_date
-        })
-        kwargs['form'] = form
-        kwargs['project'] = project
-        return super().get_context_data(**kwargs)
-
-    def post(self, request, **kwargs):
-        project = get_object_or_404(Projects, id=kwargs.get('id'))
-        form = ProjectsUpdateForm(data=request.POST)
-
-        if form.is_valid():
-            project.name = form.cleaned_data.get('name')
-            project.description = form.cleaned_data.get('description')
-            project.update_date = form.cleaned_data.get('update_date')
-            project.save()
-            return redirect('project', id=project.id)
-        return render(request, 'projects/update_project.html', context={'form': form})
+    def get_success_url(self):
+        return reverse('project', kwargs={'id': self.object.id})
 
 
 class ProjectDeleteView(TemplateView):
