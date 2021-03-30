@@ -61,7 +61,10 @@ class ProjectView(DetailView):
         paginator = Paginator(object_list, self.paginate_by, )
         page_number = self.request.GET.get('page')
         page_obj = paginator.get_page(page_number)
-        context['is_paginated'] = True
+        if page_obj.paginator.num_pages == 1:
+            context['is_paginated'] = False
+        else:
+            context['is_paginated'] = True
         context['page_obj'] = page_obj
         context['lists'] = page_obj.object_list
         return context
