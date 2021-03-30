@@ -26,8 +26,7 @@ class IndexView(ListView):
         if self.search_data:
             queryset = queryset.filter(
                 Q(summary__icontains=self.search_data) |
-                Q(status__status__icontains=self.search_data) |
-                Q(tip__tip__icontains=self.search_data)
+                Q(description__icontains=self.search_data)
             )
         return queryset
 
