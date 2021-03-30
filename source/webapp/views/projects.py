@@ -1,9 +1,12 @@
+from django.core.paginator import Paginator
+
 from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm
 from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
-from webapp.models import Projects
+from webapp.models import Projects, List
 from django.db.models import Q
 from django.utils.http import urlencode
+from django.views.generic.list import MultipleObjectMixin
 
 
 class IndexViewProject(ListView):
@@ -50,6 +53,19 @@ class ProjectView(DetailView):
     model = Projects
     pk_url_kwarg = 'id'
     context_object_name = 'project'
+    paginate_by = 3
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        object_list = List.objects.filter(project=self.get_object())
+        paginator = Paginator(object_list, self.paginate_by, )
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['is_paginated'] = True
+        context['page_obj'] = page_obj
+        context['lists'] = page_obj.object_list
+        return context
+
 
 
 class ProjectCreate(CreateView):

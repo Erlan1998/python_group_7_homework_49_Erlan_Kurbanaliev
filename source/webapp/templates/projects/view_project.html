@@ -16,8 +16,10 @@
         {% if not project.Lists.all %}
             <h2>NOT TASKS</h2>
         {% else %}
-         {% endif %}<br>
-            {% for list in project.Lists.all %}
+            </br>
+         {% endif %}
+            </br>
+            {% for list in lists %}
                 <div class="list-group">
                   <a href="{% url 'task' list.id%}" class="list-group-item list-group-item-action">
                     <div class="d-flex w-100 justify-content-between">
@@ -30,6 +32,9 @@
                 </div>
                 </br>
             {% endfor %}
+            {% if is_paginated %}
+            {% include 'partial/paginate.html' %}
+            {% endif %}
     </div>
 </body>
 

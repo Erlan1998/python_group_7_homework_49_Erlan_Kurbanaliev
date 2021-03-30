@@ -1,8 +1,8 @@
 from django.shortcuts import redirect, get_object_or_404
-from django.views.generic import TemplateView,  ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from webapp.models import List, Projects
 from webapp.forms import ListForm, SearchForm
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.db.models import Q
 from django.utils.http import urlencode
 
@@ -85,4 +85,3 @@ class TaskDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('project', kwargs={'id': self.object.project.pk})
-
