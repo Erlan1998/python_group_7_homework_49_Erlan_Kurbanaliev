@@ -1,7 +1,7 @@
 from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm
-from django.views.generic import CreateView, ListView, TemplateView, UpdateView, DetailView
-from django.shortcuts import reverse, get_object_or_404, redirect, render
-from webapp.models import Projects, List
+from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
+from django.urls import reverse, reverse_lazy
+from webapp.models import Projects
 from django.db.models import Q
 from django.utils.http import urlencode
 
@@ -72,19 +72,10 @@ class ProjectUpdateView(UpdateView):
         return reverse('project', kwargs={'id': self.object.id})
 
 
-class ProjectDeleteView(TemplateView):
+class ProjectDeleteView(DeleteView):
     template_name = 'projects/delete.html'
-
-
-    def get_context_data(self, **kwargs):
-        kwargs['project'] = get_object_or_404(Projects, id=kwargs.get('id'))
-        return super().get_context_data(**kwargs)
-
-    def post(self, request, **kwargs):
-        project = get_object_or_404(Projects, id=kwargs.get('id'))
-        project.delete()
-        return redirect('index_project')
-
-
-
+    model = Projects
+    context_object_name = 'project'
+    pk_url_kwarg = 'id'
+    success_url = reverse_lazy('index_project')
 

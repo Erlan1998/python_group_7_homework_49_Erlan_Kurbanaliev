@@ -24,3 +24,11 @@ class ProjectsUpdateForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = ['name', 'description',  'update_date']
+
+
+# class ProjectDeleteForm(forms.ModelForm):
+#     class Meta:
+#         model = Projects
+#         fields = ('name')
+#
+#     def clean_name(self, val):
