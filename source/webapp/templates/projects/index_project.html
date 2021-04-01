@@ -3,9 +3,9 @@
 {% block content %}
 <body style="background-size: 100%; background-image: url('https://image.freepik.com/free-vector/programming-code-background_46706-811.jpg') ">
     <div class="container" style="max-width: 500px; color: aliceblue">
-        <h2>Projects List</h2>
+        <h2>Список Проектов:</h2>
         {% if not projects %}
-            <h2>NOT PROJECTS</h2>
+            <h2>НЕТ ПРОЕКТОВ</h2>
         {% else %}
         {% include "partial/search_form.html" %}
          {% endif %}

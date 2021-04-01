@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 from webapp.models import Projects, List
 from django.db.models import Q
 from django.utils.http import urlencode
-from django.views.generic.list import MultipleObjectMixin
+
 
 
 class IndexViewProject(ListView):
@@ -68,7 +68,6 @@ class ProjectView(DetailView):
         context['page_obj'] = page_obj
         context['lists'] = page_obj.object_list
         return context
-
 
 
 class ProjectCreate(CreateView):
