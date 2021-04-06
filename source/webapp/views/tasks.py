@@ -56,6 +56,7 @@ class TaskAddView(CreateView):
     template_name = 'tasks/add.html'
     form_class = ListForm
 
+
     def form_valid(self, form):
         project = get_object_or_404(Projects, id=self.kwargs.get('id'))
         list = form.save(commit=False)

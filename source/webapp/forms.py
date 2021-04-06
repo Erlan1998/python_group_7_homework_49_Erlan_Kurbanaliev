@@ -23,4 +23,4 @@ class ProjectsForm(forms.ModelForm):
 class ProjectsUpdateForm(forms.ModelForm):
     class Meta:
         model = Projects
-        fields = ['name', 'description',  'update_date']
+        fields = ['name', 'description', 'created_date', 'update_date']
