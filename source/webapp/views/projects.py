@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm
 from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
@@ -70,7 +70,7 @@ class ProjectView(DetailView):
         return context
 
 
-class ProjectCreate(CreateView):
+class ProjectCreate(LoginRequiredMixin, CreateView):
     template_name = 'projects/create.html'
     form_class = ProjectsForm
     model = Projects
@@ -79,7 +79,7 @@ class ProjectCreate(CreateView):
         return reverse('project', kwargs={'id': self.object.id})
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'projects/update_project.html'
     model = Projects
     form_class = ProjectsUpdateForm
@@ -90,7 +90,7 @@ class ProjectUpdateView(UpdateView):
         return reverse('project', kwargs={'id': self.object.id})
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'projects/delete.html'
     model = Projects
     context_object_name = 'project'

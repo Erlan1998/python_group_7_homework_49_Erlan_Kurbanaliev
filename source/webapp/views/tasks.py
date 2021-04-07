@@ -5,7 +5,7 @@ from webapp.forms import ListForm, SearchForm
 from django.urls import reverse
 from django.db.models import Q
 from django.utils.http import urlencode
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class IndexView(ListView):
     template_name = 'tasks/index.html'
@@ -51,7 +51,7 @@ class TaskView(DetailView):
     pk_url_kwarg = "id"
 
 
-class TaskAddView(CreateView):
+class TaskAddView(LoginRequiredMixin, CreateView):
     model = Projects
     template_name = 'tasks/add.html'
     form_class = ListForm
@@ -66,7 +66,7 @@ class TaskAddView(CreateView):
         return redirect('project', id=project.id)
 
 
-class TaskUpdateView(UpdateView):
+class TaskUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'tasks/update.html'
     model = List
     form_class = ListForm
@@ -77,7 +77,7 @@ class TaskUpdateView(UpdateView):
         return reverse('task', kwargs={'id': self.object.id})
 
 
-class TaskDeleteView(DeleteView):
+class TaskDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'tasks/delete.html'
     model = List
     context_key = 'list'
