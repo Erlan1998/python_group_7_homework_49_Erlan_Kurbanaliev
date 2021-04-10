@@ -14,7 +14,7 @@ def login_view(request, *args, **kwargs):
             login(request, user)
             return redirect('index_project')
         context['has_error'] = True
-    return render(request, 'login.html', context=context)
+    return render(request, 'registration/login.html', context=context)
 
 
 @login_required
