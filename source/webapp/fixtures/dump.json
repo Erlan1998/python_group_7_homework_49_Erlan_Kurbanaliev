@@ -466,23 +466,5 @@
       3
     ]
   }
-},
-{
-  "model": "auth.user",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
-    "last_login": "2021-04-08T10:25:23.380Z",
-    "is_superuser": true,
-    "username": "admin",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@mail.ru",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2021-03-09T11:04:59.719Z",
-    "groups": [],
-    "user_permissions": []
-  }
 }
 ]

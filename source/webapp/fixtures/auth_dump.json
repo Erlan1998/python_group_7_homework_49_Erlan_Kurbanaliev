@@ -1,0 +1,92 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
+    "last_login": "2021-04-10T10:12:29.923Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-09T11:04:59.719Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$gJDGGIuHaHpP$j+5ZLZEFvnXuhCiYbEXzjoIy2lt4JEZmwjLf1lM5nbE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "erlan",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-10T11:57:30.525Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$gjzbIa6CXIbB$SNTKbtxVPwFq7sEsM6FpQ0rXDkHzCm4fG/C3oOk0Z1o=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "kiril",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-10T12:09:50.690Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$8HjUEoGlsZr9$2ZI8pGHRz+mKOuk+xNKx6D8j3AcgfRSAKfVg6qJ5t9I=",
+    "last_login": "2021-04-10T12:10:52.963Z",
+    "is_superuser": false,
+    "username": "beka",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-10T12:10:37.056Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$yec8w63OfiRi$TkE6PmgaWV3rMSDVXeFL4XLXeHkMN/RlwauD855B1Ww=",
+    "last_login": "2021-04-10T12:26:53.807Z",
+    "is_superuser": false,
+    "username": "qwe",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-10T12:25:45.101Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
