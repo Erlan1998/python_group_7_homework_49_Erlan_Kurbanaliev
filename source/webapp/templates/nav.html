@@ -4,24 +4,29 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse " id="navbarSupportedContent" style="margin: 0 38%;">
-    <ul class="navbar-nav ">
+    <ul class="navbar-nav" style="font-size: 16px;">
         <li class="nav-item active">
-        <a class="nav-link" href="{% url 'index_project' %}">Список Проектов <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'index_project' %}">Проектоы<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'index_tasks' %}">Список Задач <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'index_tasks' %}">Задачи<span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'project_create' %}">+Проект</a>
       </li>
-        <li class="nav-item active">
-            {% if user.is_authenticated %}
-            <a class="nav-link" href="{% url 'logout' %}?next={{ request.get_full_path }}">Выйти</a>
+        {% if user.is_authenticated %}
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'logout' %}?next={{ request.get_full_path }}">Выйти</a>
+            </li>
             {% else %}
+            <li class="nav-item active">
                 <a class="nav-link" href="{% url 'login' %}?next={{ request.get_full_path }}">Войти</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+            </li>
             {% endif %}
-        </li>
     </ul>
   </div>
 </nav>
