@@ -10,5 +10,6 @@ from webapp.views.projects import (
     ProjectView,
     ProjectCreate,
     ProjectDeleteView,
-    ProjectUpdateView
+    ProjectUpdateView,
+    UserCreate,
 )

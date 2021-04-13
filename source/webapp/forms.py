@@ -24,3 +24,9 @@ class ProjectsUpdateForm(forms.ModelForm):
     class Meta:
         model = Projects
         fields = ['name', 'description', 'created_date', 'update_date']
+
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Projects
+        fields = ['user']

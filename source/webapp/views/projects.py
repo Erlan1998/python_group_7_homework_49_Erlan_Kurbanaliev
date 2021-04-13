@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm
+from webapp.forms import ProjectsForm, SearchForm, ProjectsUpdateForm, UserUpdateForm
 from django.views.generic import CreateView, ListView,  UpdateView, DetailView, DeleteView
 from django.urls import reverse, reverse_lazy
 from webapp.models import Projects, List
@@ -96,4 +96,14 @@ class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'project'
     pk_url_kwarg = 'id'
     success_url = reverse_lazy('index_project')
+
+
+class UserCreate(UpdateView):
+    template_name = 'users/create.html'
+    form_class = UserUpdateForm
+    model = Projects
+    pk_url_kwarg = 'id'
+
+    def get_success_url(self):
+        return reverse('project', kwargs={'id': self.object.id})
 
