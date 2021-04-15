@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
-    "last_login": "2021-04-13T13:23:00.051Z",
+    "last_login": "2021-04-14T14:39:09.955Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -19,276 +19,67 @@
 },
 {
   "model": "auth.user",
-  "pk": 4,
+  "pk": 10,
   "fields": {
-    "password": "pbkdf2_sha256$216000$8HjUEoGlsZr9$2ZI8pGHRz+mKOuk+xNKx6D8j3AcgfRSAKfVg6qJ5t9I=",
-    "last_login": "2021-04-10T12:10:52Z",
+    "password": "pbkdf2_sha256$216000$swrFAT5TW47W$cFTgkY8G3zeJ9LJoecXO8B3/wihQFPXAVmatxIlHnmg=",
+    "last_login": null,
     "is_superuser": false,
-    "username": "Beka",
-    "first_name": "Beka",
-    "last_name": "Mukanbekov",
-    "email": "Mukanbekov7@gmail.com",
+    "username": "dev",
+    "first_name": "dev",
+    "last_name": "devovich",
+    "email": "dev@mail.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-10T12:10:37Z",
-    "groups": [],
+    "date_joined": "2021-04-15T07:51:52Z",
+    "groups": [
+      [
+        "Developer"
+      ]
+    ],
     "user_permissions": []
   }
 },
 {
   "model": "auth.user",
-  "pk": 6,
+  "pk": 11,
   "fields": {
-    "password": "pbkdf2_sha256$216000$Kq5wXZCOh64N$8FwAt5bFoywAcIN7j+/OjN6me9dmaY2NdahkBmOFNy4=",
-    "last_login": "2021-04-12T10:17:31Z",
+    "password": "pbkdf2_sha256$216000$65jOGeFZAq8Y$9lk1kE7tQKVXG6DgbZveuy7/5OL+4N5rsctft+sOQdk=",
+    "last_login": null,
     "is_superuser": false,
-    "username": "Erlan",
-    "first_name": "Erlan",
-    "last_name": "Almazbekovich",
-    "email": "kurbanalieverlan@mail.ru",
+    "username": "manager",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-12T09:25:07Z",
-    "groups": [],
-    "user_permissions": [
+    "date_joined": "2021-04-15T07:52:46Z",
+    "groups": [
       [
-        "add_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "change_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "delete_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "view_logentry",
-        "admin",
-        "logentry"
-      ],
-      [
-        "add_group",
-        "auth",
-        "group"
-      ],
-      [
-        "change_group",
-        "auth",
-        "group"
-      ],
-      [
-        "delete_group",
-        "auth",
-        "group"
-      ],
-      [
-        "view_group",
-        "auth",
-        "group"
-      ],
-      [
-        "add_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "change_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "delete_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "view_permission",
-        "auth",
-        "permission"
-      ],
-      [
-        "add_user",
-        "auth",
-        "user"
-      ],
-      [
-        "change_user",
-        "auth",
-        "user"
-      ],
-      [
-        "delete_user",
-        "auth",
-        "user"
-      ],
-      [
-        "view_user",
-        "auth",
-        "user"
-      ],
-      [
-        "add_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "change_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "delete_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "view_contenttype",
-        "contenttypes",
-        "contenttype"
-      ],
-      [
-        "add_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "change_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "delete_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "view_session",
-        "sessions",
-        "session"
-      ],
-      [
-        "add_list",
-        "webapp",
-        "list"
-      ],
-      [
-        "change_list",
-        "webapp",
-        "list"
-      ],
-      [
-        "delete_list",
-        "webapp",
-        "list"
-      ],
-      [
-        "view_list",
-        "webapp",
-        "list"
-      ],
-      [
-        "add_porjects",
-        "webapp",
-        "porjects"
-      ],
-      [
-        "change_porjects",
-        "webapp",
-        "porjects"
-      ],
-      [
-        "delete_porjects",
-        "webapp",
-        "porjects"
-      ],
-      [
-        "view_porjects",
-        "webapp",
-        "porjects"
-      ],
-      [
-        "add_projects",
-        "webapp",
-        "projects"
-      ],
-      [
-        "change_projects",
-        "webapp",
-        "projects"
-      ],
-      [
-        "delete_projects",
-        "webapp",
-        "projects"
-      ],
-      [
-        "view_projects",
-        "webapp",
-        "projects"
-      ],
-      [
-        "add_status",
-        "webapp",
-        "status"
-      ],
-      [
-        "change_status",
-        "webapp",
-        "status"
-      ],
-      [
-        "delete_status",
-        "webapp",
-        "status"
-      ],
-      [
-        "view_status",
-        "webapp",
-        "status"
-      ],
-      [
-        "add_type",
-        "webapp",
-        "type"
-      ],
-      [
-        "change_type",
-        "webapp",
-        "type"
-      ],
-      [
-        "delete_type",
-        "webapp",
-        "type"
-      ],
-      [
-        "view_type",
-        "webapp",
-        "type"
+        "Manager"
       ]
-    ]
+    ],
+    "user_permissions": []
   }
 },
 {
   "model": "auth.user",
-  "pk": 7,
+  "pk": 12,
   "fields": {
-    "password": "pbkdf2_sha256$216000$OO7IQTb1pP9S$TNfDKMJuI3T0kfjZkxHj7VWtYeJGQu8CuiJtEPLYzmE=",
+    "password": "pbkdf2_sha256$216000$vglEbO9lZTEg$mi3DIIdfYevZoheITRI06GRu1lDEYJWk/18ftxXC4V4=",
     "last_login": null,
     "is_superuser": false,
-    "username": "KasymovJoodar",
-    "first_name": "Joodar",
-    "last_name": "Kasymov",
-    "email": "Kasymov@mail.ru",
+    "username": "lead",
+    "first_name": "lead",
+    "last_name": "leadovich",
+    "email": "lead@mail.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-13T13:37:16Z",
-    "groups": [],
+    "date_joined": "2021-04-15T07:53:34Z",
+    "groups": [
+      [
+        "Team Lead"
+      ]
+    ],
     "user_permissions": []
   }
 }

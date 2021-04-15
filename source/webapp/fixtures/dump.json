@@ -48,7 +48,8 @@
     "name": "Соц.сети",
     "description": "Соц сети являются важным аспектом  в жизни человека!",
     "created_date": "2021-03-27",
-    "update_date": "2022-01-01"
+    "update_date": "2022-01-01",
+    "user": []
   }
 },
 {
@@ -58,7 +59,8 @@
     "name": "Nike",
     "description": "Создать сайт для компании NIKE!",
     "created_date": "2021-03-27",
-    "update_date": "2021-05-30"
+    "update_date": "2021-05-30",
+    "user": []
   }
 },
 {
@@ -68,7 +70,8 @@
     "name": "IT Атрактор",
     "description": "Запись на курсы в группу Python-7! Закончить с отличием!!!",
     "created_date": "2021-03-27",
-    "update_date": "2021-07-09"
+    "update_date": "2021-07-09",
+    "user": []
   }
 },
 {
@@ -78,7 +81,8 @@
     "name": "SONY",
     "description": "Платформа для распознования устройств SONY",
     "created_date": "2021-03-27",
-    "update_date": "2021-06-28"
+    "update_date": "2021-06-28",
+    "user": []
   }
 },
 {
@@ -88,7 +92,8 @@
     "name": "Интернет Магазин",
     "description": "Интернет магазин на подобии Амазон!",
     "created_date": "2021-03-26",
-    "update_date": "2021-03-27"
+    "update_date": "2021-03-27",
+    "user": []
   }
 },
 {
@@ -98,17 +103,8 @@
     "name": "Smart-sity",
     "description": "Система Умный город для безопастности граждан!",
     "created_date": "2021-03-27",
-    "update_date": "2021-06-28"
-  }
-},
-{
-  "model": "webapp.projects",
-  "pk": 8,
-  "fields": {
-    "name": "Чистый город",
-    "description": "Система для чистого города!",
-    "created_date": "2021-03-26",
-    "update_date": "2021-05-30"
+    "update_date": "2021-06-28",
+    "user": []
   }
 },
 {
@@ -391,52 +387,6 @@
 },
 {
   "model": "webapp.list",
-  "pk": 49,
-  "fields": {
-    "summary": "Поиск Информации",
-    "description": "Поиск информациий о проектах связанных  с чистым городом!",
-    "created_at": "2021-03-30T13:10:37.627Z",
-    "updated_at": "2021-03-30T13:10:37.627Z",
-    "status": 1,
-    "project": 8,
-    "tip": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 50,
-  "fields": {
-    "summary": "Палигон",
-    "description": "Новыц мусорный Палигон расположеный в дали от города!",
-    "created_at": "2021-03-30T13:11:13.601Z",
-    "updated_at": "2021-03-30T13:11:13.601Z",
-    "status": 1,
-    "project": 8,
-    "tip": [
-      1
-    ]
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 51,
-  "fields": {
-    "summary": "Место для Полигона",
-    "description": "Найти землю которую сможет выделить Гор.Кенеш для Гор.Свалки!",
-    "created_at": "2021-03-30T13:12:14.441Z",
-    "updated_at": "2021-03-30T13:12:14.441Z",
-    "status": 1,
-    "project": 8,
-    "tip": [
-      1,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.list",
   "pk": 52,
   "fields": {
     "summary": "Посещение",
@@ -465,6 +415,82 @@
       1,
       3
     ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
+    "last_login": "2021-04-13T13:23:00.051Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-03-09T11:04:59.719Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$8HjUEoGlsZr9$2ZI8pGHRz+mKOuk+xNKx6D8j3AcgfRSAKfVg6qJ5t9I=",
+    "last_login": "2021-04-10T12:10:52Z",
+    "is_superuser": false,
+    "username": "Beka",
+    "first_name": "Beka",
+    "last_name": "Mukanbekov",
+    "email": "Mukanbekov7@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-10T12:10:37Z",
+    "groups": [
+      2
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$Kq5wXZCOh64N$8FwAt5bFoywAcIN7j+/OjN6me9dmaY2NdahkBmOFNy4=",
+    "last_login": "2021-04-12T10:17:31Z",
+    "is_superuser": false,
+    "username": "Erlan",
+    "first_name": "Erlan",
+    "last_name": "Almazbekovich",
+    "email": "kurbanalieverlan@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-12T09:25:07Z",
+    "groups": [
+      1
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$FDKUw9IBBupq$OlaoqSHdNkLIdqf44L26zLxZZxS/OEnaWR9KrZxYmA4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Jodar",
+    "first_name": "Jodar",
+    "last_name": "Kasymov",
+    "email": "kasymov@mail.ru",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-04-14T12:34:44Z",
+    "groups": [],
+    "user_permissions": []
   }
 }
 ]
