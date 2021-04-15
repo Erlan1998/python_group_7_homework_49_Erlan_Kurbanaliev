@@ -32,6 +32,9 @@ class Projects(models.Model):
     class Meta:
         verbose_name = 'Проект'
         verbose_name_plural = 'Проекты'
+        permissions = [
+            ('user_project_add', 'может добавлть пользователя')
+        ]
 
     def __str__(self):
         return f'{self.name}'
