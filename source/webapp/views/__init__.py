@@ -11,5 +11,5 @@ from webapp.views.projects import (
     ProjectCreate,
     ProjectDeleteView,
     ProjectUpdateView,
-    UserCreate,
+    UserUpdate,
 )

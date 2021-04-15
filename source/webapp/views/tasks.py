@@ -5,7 +5,8 @@ from webapp.forms import ListForm, SearchForm
 from django.urls import reverse
 from django.db.models import Q
 from django.utils.http import urlencode
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
 
 class IndexView(ListView):
     template_name = 'tasks/index.html'
@@ -51,11 +52,12 @@ class TaskView(DetailView):
     pk_url_kwarg = "id"
 
 
-class TaskAddView(LoginRequiredMixin, CreateView):
+class TaskAddView(PermissionRequiredMixin, CreateView):
     model = Projects
     template_name = 'tasks/add.html'
     form_class = ListForm
-
+    pk_url_kwarg = 'id'
+    permission_required = 'webapp.add_list'
 
     def form_valid(self, form):
         project = get_object_or_404(Projects, id=self.kwargs.get('id'))
@@ -65,23 +67,35 @@ class TaskAddView(LoginRequiredMixin, CreateView):
         form.save_m2m()
         return redirect('project', id=project.id)
 
+    def has_permission(self):
+        return super().has_permission() and self.request.user in self.get_object().user.all()
 
-class TaskUpdateView(LoginRequiredMixin, UpdateView):
+
+class TaskUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'tasks/update.html'
     model = List
     form_class = ListForm
     context_object_name = 'list'
     pk_url_kwarg = 'id'
+    permission_required = 'webapp.change_list'
+
 
     def get_success_url(self):
         return reverse('task', kwargs={'id': self.object.id})
 
+    def has_permission(self):
+        return super().has_permission() and self.request.user in self.get_object().project.user.all()
 
-class TaskDeleteView(LoginRequiredMixin, DeleteView):
+
+class TaskDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'tasks/delete.html'
     model = List
-    context_key = 'list'
+    context_object_name = 'list'
     pk_url_kwarg = 'id'
+    permission_required = 'webapp.delete_list'
 
     def get_success_url(self):
         return reverse('project', kwargs={'id': self.object.project.pk})
+
+    def has_permission(self):
+        return super().has_permission() and self.request.user in self.get_object().project.user.all()
