@@ -14,8 +14,12 @@
         <a href="{% url 'project_delete' project.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
         <a href="{% url 'project_update' project.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
         <a href="{% url 'task_add' project.id %}"><button type="button" class="btn btn-warning">Создать задачу!</button></a>
+            {% if request.user in project.user.all  %}
         <a href="{% url 'user_add' project.id %}"><button type="button" class="btn btn-warning">Редактировать пользователя!</button></a>
+                {% endif %}
         {% endif %}
+
+        {% if request.user in project.user.all %}
         {% if not project.Lists.all %}
             <h2>NOT TASKS</h2>
         {% else %}
@@ -38,6 +42,7 @@
             {% if is_paginated %}
             {% include 'partial/paginate.html' %}
             {% endif %}
+    {% endif %}
     </div>
 </body>
 

@@ -60,7 +60,11 @@
     "description": "Создать сайт для компании NIKE!",
     "created_date": "2021-03-27",
     "update_date": "2021-05-30",
-    "user": []
+    "user": [
+      10,
+      11,
+      12
+    ]
   }
 },
 {
@@ -71,7 +75,11 @@
     "description": "Запись на курсы в группу Python-7! Закончить с отличием!!!",
     "created_date": "2021-03-27",
     "update_date": "2021-07-09",
-    "user": []
+    "user": [
+      10,
+      11,
+      12
+    ]
   }
 },
 {
@@ -104,6 +112,17 @@
     "description": "Система Умный город для безопастности граждан!",
     "created_date": "2021-03-27",
     "update_date": "2021-06-28",
+    "user": []
+  }
+},
+{
+  "model": "webapp.projects",
+  "pk": 13,
+  "fields": {
+    "name": "Smart-sity",
+    "description": "Smart sity  для безопасности граждан!",
+    "created_date": "2021-03-26",
+    "update_date": "2021-09-01",
     "user": []
   }
 },
@@ -422,7 +441,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$0tZz6a00IDr1$KMx2Z5XRsLPI1Hqe4Cgd9jpbL9CEf1K3JqeTwCt+fxY=",
-    "last_login": "2021-04-13T13:23:00.051Z",
+    "last_login": "2021-04-15T12:06:58.533Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -437,38 +456,38 @@
 },
 {
   "model": "auth.user",
-  "pk": 4,
+  "pk": 10,
   "fields": {
-    "password": "pbkdf2_sha256$216000$8HjUEoGlsZr9$2ZI8pGHRz+mKOuk+xNKx6D8j3AcgfRSAKfVg6qJ5t9I=",
-    "last_login": "2021-04-10T12:10:52Z",
+    "password": "pbkdf2_sha256$216000$swrFAT5TW47W$cFTgkY8G3zeJ9LJoecXO8B3/wihQFPXAVmatxIlHnmg=",
+    "last_login": "2021-04-15T12:08:43.151Z",
     "is_superuser": false,
-    "username": "Beka",
-    "first_name": "Beka",
-    "last_name": "Mukanbekov",
-    "email": "Mukanbekov7@gmail.com",
+    "username": "dev",
+    "first_name": "dev",
+    "last_name": "devovich",
+    "email": "dev@mail.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-10T12:10:37Z",
+    "date_joined": "2021-04-15T07:51:52Z",
     "groups": [
-      2
+      3
     ],
     "user_permissions": []
   }
 },
 {
   "model": "auth.user",
-  "pk": 6,
+  "pk": 11,
   "fields": {
-    "password": "pbkdf2_sha256$216000$Kq5wXZCOh64N$8FwAt5bFoywAcIN7j+/OjN6me9dmaY2NdahkBmOFNy4=",
-    "last_login": "2021-04-12T10:17:31Z",
+    "password": "pbkdf2_sha256$216000$65jOGeFZAq8Y$9lk1kE7tQKVXG6DgbZveuy7/5OL+4N5rsctft+sOQdk=",
+    "last_login": "2021-04-15T12:19:24.126Z",
     "is_superuser": false,
-    "username": "Erlan",
-    "first_name": "Erlan",
-    "last_name": "Almazbekovich",
-    "email": "kurbanalieverlan@mail.ru",
+    "username": "manager",
+    "first_name": "ERLAN",
+    "last_name": "Kurbanaliev",
+    "email": "kurbanalieverlan@gmail.com",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-12T09:25:07Z",
+    "date_joined": "2021-04-15T07:52:46Z",
     "groups": [
       1
     ],
@@ -477,19 +496,21 @@
 },
 {
   "model": "auth.user",
-  "pk": 8,
+  "pk": 12,
   "fields": {
-    "password": "pbkdf2_sha256$216000$FDKUw9IBBupq$OlaoqSHdNkLIdqf44L26zLxZZxS/OEnaWR9KrZxYmA4=",
-    "last_login": null,
+    "password": "pbkdf2_sha256$216000$vglEbO9lZTEg$mi3DIIdfYevZoheITRI06GRu1lDEYJWk/18ftxXC4V4=",
+    "last_login": "2021-04-15T09:06:31.947Z",
     "is_superuser": false,
-    "username": "Jodar",
-    "first_name": "Jodar",
-    "last_name": "Kasymov",
-    "email": "kasymov@mail.ru",
+    "username": "lead",
+    "first_name": "lead",
+    "last_name": "leadovich",
+    "email": "lead@mail.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2021-04-14T12:34:44Z",
-    "groups": [],
+    "date_joined": "2021-04-15T07:53:34Z",
+    "groups": [
+      2
+    ],
     "user_permissions": []
   }
 }
