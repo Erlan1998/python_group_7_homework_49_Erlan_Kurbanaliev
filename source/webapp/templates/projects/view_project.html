@@ -9,13 +9,13 @@
         <p>Description: {{ project.description }}</p>
         <p>Date of creation: {{ project.created_date }}</p>
         <p>Date of deadline: {{ project.update_date }}</p>
-        {% for user in project.user.all %}
-        <p>Users : {{ user }}</p>
-        {% endfor %}
+        <p>Users : {% for user in project.user.all %}{{ user }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        {% if user.is_authenticated %}
         <a href="{% url 'project_delete' project.id %}"><button type="button" class="btn btn-secondary">Удаление!</button></a>
         <a href="{% url 'project_update' project.id %}"><button type="button" class="btn btn-warning">Редактировать!</button></a>
         <a href="{% url 'task_add' project.id %}"><button type="button" class="btn btn-warning">Создать задачу!</button></a>
         <a href="{% url 'user_add' project.id %}"><button type="button" class="btn btn-warning">Редактировать пользователя!</button></a>
+        {% endif %}
         {% if not project.Lists.all %}
             <h2>NOT TASKS</h2>
         {% else %}
@@ -42,3 +42,4 @@
 </body>
 
 {% endblock content %}
+
