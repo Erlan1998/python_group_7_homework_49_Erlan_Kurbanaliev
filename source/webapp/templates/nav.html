@@ -15,18 +15,30 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'project_create' %}">+Проект</a>
       </li>
+
+    <li class="nav-item dropdown active">
         {% if user.is_authenticated %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'logout' %}?next={{ request.get_full_path }}">Выйти</a>
-            </li>
-            {% else %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'login' %}?next={{ request.get_full_path }}">Войти</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
-            </li>
-            {% endif %}
+            <a class="nav-link dropdown-toggle" style="text-transform:uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle" style="font-size: 20px"></i> {{ request.user }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Пользователь: {{ request.user }}</a>
+                {% for group in request.user.groups.all %}
+            <a class="dropdown-item" href="#">Группа: {{ group }}</a>
+                {% endfor %}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}?next={{ request.get_full_path }}">Выйти</a>
+            </div>
+        {% else %}
+            <a class="nav-link dropdown-toggle" style="text-transform:uppercase" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle" style="font-size: 20px"></i>Авторизация</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item"  href="{% url 'login' %}?next={{ request.get_full_path }}">Войти</a>
+            <a class="dropdown-item"  href="{% url 'register' %}">Регистрация</a>
+            </div>
+        {% endif %}
+
+      </li>
     </ul>
   </div>
 </nav>
