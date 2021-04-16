@@ -27,7 +27,7 @@ class Projects(models.Model):
     description = models.TextField(max_length=100)
     created_date = models.DateField(null=False, blank=False, verbose_name='Дата Начало')
     update_date = models.DateField(null=True, blank=True, verbose_name='Дата Окончания')
-    user = models.ManyToManyField(get_user_model(), default=1, related_name='projects', verbose_name='пользователи', null=True, blank=True)
+    user = models.ManyToManyField(get_user_model(), default=1, related_name='projects', verbose_name='пользователи')
 
     class Meta:
         verbose_name = 'Проект'
