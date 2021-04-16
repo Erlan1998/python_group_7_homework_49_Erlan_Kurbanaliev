@@ -1,19 +1,18 @@
 {% extends 'shablon.html' %}
 
-{% block title %}Пользователь{% endblock %}
 
 {% block content %}
     </br>
     <div class="container card mb-3 " style="max-width: 800px;">
   <div class="row no-gutters">
-    <div class="col-md-4">
+    <div class="col-md-4" style="margin: 20px auto">
         {% if user_obj.profile.avatar %}
-        <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
+        <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="260" height="300" alt="user picture">
         {% endif %}
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h4 class="card-title">Cтраница пользователя: {{ user_obj.get_full_name|default:user_obj.username }}</h4>
+        <h4 class="card-title">Пользователь: {{ user_obj.get_full_name|default:user_obj.username }}</h4>
           <p class="card-text">Должность: {{ user_obj.username }}</p>
         <p class="card-text">Имя: {{ user_obj.first_name }}</p>
         <p class="card-text">Фамилия: {{ user_obj.last_name }}</p>
