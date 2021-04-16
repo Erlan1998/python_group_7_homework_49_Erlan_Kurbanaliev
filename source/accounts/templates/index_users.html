@@ -1,0 +1,33 @@
+{% extends 'shablon.html' %}
+
+{% block content %}
+
+<body style="background-size: 100%; background-image: url('https://image.freepik.com/free-vector/programming-code-background_46706-811.jpg') ">
+    <div class="container" style="max-width: 500px; color: aliceblue">
+        <h2>Список Пользователей:</h2>
+        {% if not user_object %}
+            <h2>НЕТ Пользователей</h2>
+        {% else %}
+        {% include "partial/search_form.html" %}
+         {% endif %}
+            {% for user in user_object %}
+                <div class="list-group">
+                  <a href="{% url 'all_accounts' user.id %}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{ user.username }}</h5>
+{#                      <small class="text-muted">#}
+{#                        <p>Дата создания: {{ project.created_date }}</p>#}
+{#                        <p>Дата дэдлайна: {{ project.update_date }}</p>#}
+{#                      </small>#}
+                    </div>
+                  </a>
+                </div>
+                </br>
+            {% endfor %}
+        {% if is_paginated %}
+            {% include 'partial/paginate.html' %}
+        {% endif %}
+    </div>
+</body>
+
+{% endblock content %}

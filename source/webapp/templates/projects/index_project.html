@@ -1,31 +1,7 @@
 {% extends 'shablon.html' %}
 
 {% block content %}
-<body style="background-size: 100%; background-image: url('https://image.freepik.com/free-vector/programming-code-background_46706-811.jpg') ">
-    <div class="container" style="max-width: 500px; color: aliceblue">
-        <h2>Список Проектов:</h2>
-        {% if not projects %}
-            <h2>НЕТ ПРОЕКТОВ</h2>
-        {% else %}
-        {% include "partial/search_form.html" %}
-         {% endif %}
-            {% for project in projects %}
-                <div class="list-group">
-                  <a href="{% url 'project' project.id %}" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{{ project.name }}</h5>
-                      <small class="text-muted">
-                        <p>Дата создания: {{ project.created_date }}</p>
-                        <p>Дата дэдлайна: {{ project.update_date }}</p>
-                      </small>
-                    </div>
-                  </a>
-                </div>
-                </br>
-            {% endfor %}
-        {% if is_paginated %}
-            {% include 'partial/paginate.html' %}
-        {% endif %}
-    </div>
-</body>
+
+    {% include 'partial/list_project.html' %}
+
 {% endblock content %}

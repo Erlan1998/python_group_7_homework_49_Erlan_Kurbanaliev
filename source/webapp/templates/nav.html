@@ -15,6 +15,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'project_create' %}">+Проект</a>
       </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index_accounts'  %}">Users</a>
+      </li>
 
     <li class="nav-item dropdown active">
         {% if user.is_authenticated %}
