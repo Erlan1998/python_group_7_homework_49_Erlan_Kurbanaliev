@@ -3,9 +3,6 @@
         {% if not projects %}
             <h2>НЕТ ПРОЕКТОВ</h2>
         {% else %}
-            </br>
-        {% include "partial/search_form.html" %}
-         {% endif %}
             {% for project in projects %}
                 <div class="list-group">
                   <a href="{% url 'project' project.id %}" class="list-group-item list-group-item-action">
@@ -22,6 +19,7 @@
             {% endfor %}
         {% if is_paginated %}
             {% include 'partial/paginate.html' %}
+        {% endif %}
         {% endif %}
     </div>
 </body>
