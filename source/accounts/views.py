@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Q
 from django.utils.http import urlencode
 from django.views.generic import DetailView, ListView
@@ -21,13 +22,14 @@ def register_view(request, *args, **kwargs):
     return render(request, 'registration/registe.html', context=context)
 
 
-class UserView(ListView):
+class UserView(PermissionRequiredMixin, ListView):
     model = get_user_model()
     template_name = 'index_users.html'
     context_object_name = 'user_object'
     pk_url_kwarg = 'id'
     paginate_related_by = 5
     paginate_related_orphans = 0
+    permission_required = 'accounts.user_view'
 
 
     def get(self, request, **kwargs):
