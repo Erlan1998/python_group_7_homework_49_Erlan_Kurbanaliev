@@ -19,7 +19,7 @@
         <p class="card-text">О себе: {{ user_obj.profile.about }}</p>
         <p class="card-text">Github: {{ user_obj.profile.github }}</p>
         <p class="card-text">Почта: {{ user_obj.email }}</p>
-
+          <a href="{% url 'change_password' %}">поменять пароль!</a>
       </div>
     </div>
   </div>
