@@ -1,18 +1,18 @@
 {% extends 'shablon.html' %}
 
-{% block title %}Редактировать пользователя{% endblock %}
-
-{% block menu_links %}
-    <li><a href="{% url "all_accounts" user_obj.id %}">Назад</a></li>
-    <li><a href="#">Смена пароля</a></li>
-{% endblock %}
 {% block content %}
-    <h1>Поменять личные данные</h1>
-    <form action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {% include 'partial/form.html' with fields_only=True %}
-        {% include 'partial/form.html' with form=profile_form fields_only=True %}
-        <br>
-        <input type="submit" value="сохранить">
-    </form>
+    <body style="background-size: 100%; background-image: url('https://gx.net.ua/news_images/1458422355.jpg')">
+        <div class="font-weight-bold d-flex justify-content-center " style="text-align: center;">
+            <form action="" method="post" enctype="multipart/form-data">
+                <h4>Редактирование личных данных!</h4>
+                {% csrf_token %}
+                {% include 'partial/form.html' with fields_only=True %}
+                {% include 'partial/form.html' with form=profile_form fields_only=True %}
+                <input type="submit" value="сохранить">
+            </form>
+        </div>
+        </br>
+    </body>
 {% endblock %}
+
+
